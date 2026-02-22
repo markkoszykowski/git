@@ -1,7 +1,7 @@
-[filter "gitignore"]
-	smudge = "tmp=$(mktemp); cat >> \"${tmp}\"; printf \"# %f:\\n\\n%s\\n\\n\\n\" \"$(cat \"${tmp}\")\" >> .gitignore; cat \"${tmp}\"; rm \"${tmp}\""
-	clean = cat
-[core]
-	attributesfile = ~/.gitattributes
 [init]
 	defaultBranch = main
+[core]
+	attributesfile = ~/.gitattributes
+[filter "gitignore"]
+	smudge = "tmp=$(mktemp); cat >> \"${tmp}\"; printf \"# %f\\n\\n%s\\n\\n\\n\" \"$(cat \"${tmp}\")\" >> .gitignore; cat \"${tmp}\"; rm \"${tmp}\""
+	clean = cat
